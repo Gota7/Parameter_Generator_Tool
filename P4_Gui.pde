@@ -34,7 +34,7 @@ void setup() {
   CPU = new CPU();
   
   //Mode List
-  List modeList = Arrays.asList("0 - Normal", "1 - Wingcap", "2 - Fall In", "3 - Fall In (Duplicate?)", "4 - Normal?", "5 - Spin In (Like Start of Level)", "6 - Like 4, but shorter distance travelled", "7 - ?", "8 - ?", "9 - ?", "10 - ?", "11 - Like coming out of level painting, lets you save", "12 - ?", "13 - Used for Tiny Huge Island pipes (Pipe entrance?)", "14 - Used for \"Castle - 1st floor\" front door entrances", "15 - ?");
+  List modeList = Arrays.asList("0 - Normal", "1 - Wingcap", "2 - Fall In", "3 - Fall In (Duplicate?)", "4 - Normal?", "5 - Spin In (Like Start of Level)", "6 - Like 4, but shorter distance travelled", "7 - ?", "8 - Like coming out of a pit/pipe, let's you save.", "9 - ?", "10 - ?", "11 - Like coming out of level painting, lets you save", "12 - ?", "13 - Used for Tiny Huge Island pipes (Pipe entrance?)", "14 - Used for \"Castle - 1st floor\" front door entrances", "15 - ?");
   cp5.addScrollableList("Mode")
      .setPosition(2, 70)
      .setSize(300, 100)
