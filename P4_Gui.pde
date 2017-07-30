@@ -8,6 +8,7 @@ import java.util.*;
 GUI GUI = new GUI();
 ControlP5 cp5;
 CPU CPU;
+CheckBox AlwaysOnTop;
 
 //Entrances
 int WarpModeID = 0;
@@ -32,6 +33,7 @@ void setup() {
   surface.setTitle("Parameter Generator Tool");
   cp5 = new ControlP5(this);
   CPU = new CPU();
+  surface.setAlwaysOnTop(true);
   
   //Mode List
   List modeList = Arrays.asList("0 - Spawns on ground standing.", "1 - Wingcap Mario for ? Switch only, else falls and takes damage.", "2 - Mario has Wingcap, other characters Spin in with Star wipe.", "3 - Spin in with Circle wipe.", "4 - Fall in, Star Wipe.", "5 - Fall in, Star Wipe. (Duplicate?)", "6 - Fall in, No Wipe.", "7 - Fall in, No Wipe. (Duplicate?)", "8 - Like jumping out of a pit/pipe, but lets you save.", "9 - Like jumping out of a pit/pipe, but lets you save. (Duplicate?)", "10 - Spin in, No Wipe.", "11 - Acts like painting, makes sound, lets you save.", "12 - Acts like painting, makes sound, lets you save. (Duplicate?)", "13 - Jumps with fist in air, like coming out of a pipe.", "14 - Spawns on ground standing (Castle Door Entrance).", "15 - Fall in with Mario Wipe.");
@@ -189,6 +191,19 @@ void setup() {
                    .hide()
                    ;                  
   makeEditable( Height );
+  
+  //CheckBox for AlwaysOnTop
+  AlwaysOnTop = cp5.addCheckBox("AlwaysOnTop")
+                .setPosition(500-195/2-30, 265)
+                .setSize(35, 35)
+                .addItem("3", 0)
+                .setCaptionLabel("")
+                .hideLabels()
+                .setColorBackground(#00ff00)
+                .setColorActive(#ff0000)
+                .setValue(100)
+                .hide()
+                ;
 
 }
 

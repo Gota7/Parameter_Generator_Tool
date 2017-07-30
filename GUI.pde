@@ -114,12 +114,14 @@ class GUI {
       cp5.get(CheckBox.class, "NoDeathExit").show();
       cp5.get(Numberbox.class, "DeathExitID").show();
       cp5.get(CheckBox.class, "Orientation").show();
+      cp5.get(CheckBox.class, "AlwaysOnTop").show();
       cp5.get(Numberbox.class, "Height").show();
       cp5.get(Numberbox.class, "Width").show();
     } else {
       cp5.get(CheckBox.class, "NoDeathExit").hide();
       cp5.get(Numberbox.class, "DeathExitID").hide();
       cp5.get(CheckBox.class, "Orientation").hide();
+      cp5.get(CheckBox.class, "AlwaysOnTop").hide();
       cp5.get(Numberbox.class, "Height").hide();
       cp5.get(Numberbox.class, "Width").hide();
     }
@@ -201,6 +203,7 @@ class GUI {
     text("Death Entrance ID:", 152, 63+205);
     text("Orientation:", 152, 63);
     text("Size:", 152, 158);
+    text("Always On Top:", 500-195/2, 250);
     textSize(12);
     textAlign(CENTER);
     text("On death go to last entered level.", 175, 85+205);
@@ -210,13 +213,19 @@ class GUI {
     text("The size of the exit.", 153, 223);
     text("ID of entrance to go to on death.", 175, 85+25+205);
     text("(Usually an entrance that acts like a painting).", 153, 85+25+20+205);
+    text("If on, this generator will\nappear over other windows.", 500-195/2, 265+35/2+35);
     textSize(11);
     text("Control whether this is a vertical or horizontal entrance.", 153, 105);
     textSize(9);
     textAlign(RIGHT);
     if (NoDeathExit.getState(0)){text("On", 17, 83+205);} else {text("Off", 17, 83+205);}
     if (Orientation.getState(0)){text("On", 17, 83);} else {text("Off", 17, 83);}
+    if (AlwaysOnTop.getState(0)){text("Off", 500-195/2+27, 265+35/2+3);} else {text("On", 500-195/2+27, 265+35/2+3);}
     textSize(12);
+    
+    
+    //AlwaysOnTop
+    if (AlwaysOnTop.getState(0)){surface.setAlwaysOnTop(false);} else {surface.setAlwaysOnTop(true);}
     
     
     //P1
