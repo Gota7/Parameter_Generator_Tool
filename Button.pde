@@ -47,6 +47,29 @@ class Button {
     }
   
   }
+  
+  
+  
+  //PageLoop
+  void draw4page(int number) {
+    
+    if (!stroke) {noStroke();} else {stroke(0);}
+    fill(colors);
+    textSize(12);
+    strokeWeight(weight);
+    rect(x, y, w, h);
+    textAlign(CENTER);
+    fill(0);
+    text(text, x+w/2+1, y+h/2+5);
+    
+    //Test collisions
+    if (mouseX > x && mouseX < x+w && mouseY > y && mouseY < y+h && mousePressed) {
+      
+      GUI.page = number;
+      
+    }
+  
+  }
 
 
 

@@ -32,6 +32,7 @@ class CPU {
   
     if (GUI.Mode.equals("Exit")) {P1 = true; P2 = true; P3 = false; P4 = false;}
     if (GUI.Mode.equals("PipeExit")) {P1 = true; P2 = true; P3 = false; P4 = false;}
+    if (GUI.Mode.equals("Type 14")) {P1 = true; P2 = true; P3 = true; P4 = true;}
     if (GUI.Mode.equals("View")) {P1 = true; P2 = true; P3 = true; P4 = false;}
     if (GUI.Mode.equals("Teleport")) {P1 = true; P2 = true; P3 = false; P4 = false;}
     if (GUI.Mode.equals("Entrance")) {P1 = true; P2 = true; P3 = true; P4 = true;}
@@ -81,6 +82,17 @@ class CPU {
   String View2Hex(int i) {
   
     return "FF0"+hex(i, 1);
+  
+  }
+  
+  
+  //Camerea Mode to decimal parameter.
+  String C2D(int hexA, int hexB) {
+  
+    //Do math
+    int result = hexA*16+hexB;
+    
+    return str(result);
   
   }
 

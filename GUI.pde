@@ -7,7 +7,12 @@ class GUI {
   Button TeleportB;
   Button ViewB;
   Button EntranceB;
+  Button Type14B;
   Button PipeExitB;
+  Button NextPage1;
+  Button BackPage2;
+  
+  int page = 1;
   
   
   //Setup
@@ -18,8 +23,10 @@ class GUI {
     TeleportB = new Button(65, 5, 55, 30, "Teleport", color(255, 122, 0));
     ViewB = new Button(125, 5, 55, 30, "View", color(255, 255, 0));
     EntranceB = new Button(185, 5, 55, 30, "Entrance", color(0, 255, 0));
-    PipeExitB = new Button(245, 5, 55, 30, "PipeExit", color(255, 0, 255));
-    
+    Type14B = new Button(125, 5, 55, 30, "Type 14", color(255, 255, 0));
+    PipeExitB = new Button(65, 5, 55, 30, "PipeExit", color(255, 122, 0));
+    NextPage1 = new Button(245, 5, 55, 30, "Next >>", color(255, 0, 255));
+    BackPage2 = new Button(5, 5, 55, 30, "<< Back", color(255, 0, 0));
         
   }
   
@@ -36,11 +43,20 @@ class GUI {
     strokeWeight(1);
     
     //Buttons
-    ExitB.draw();
-    TeleportB.draw();
-    ViewB.draw();
-    EntranceB.draw();
-    PipeExitB.draw();
+    if (page == 1) {
+        ExitB.draw();
+        TeleportB.draw();
+        ViewB.draw();
+        EntranceB.draw();
+        NextPage1.draw4page(2);
+    }
+    
+    if (page == 2) {
+        BackPage2.draw4page(1);
+        PipeExitB.draw();
+        Type14B.draw();
+    }
+    
     
     //Draw CPU
     CPU.draw();
@@ -140,6 +156,28 @@ class GUI {
       cp5.get(Numberbox.class, "DestinationTeleID").show();
     } else {
       cp5.get(Numberbox.class, "DestinationTeleID").hide();
+    }
+    
+    if (this.Mode == "Type 14") {
+      this.Type14GUI();
+      cp5.get(ScrollableList.class, "Star 0 Camera").show();
+      cp5.get(ScrollableList.class, "Star 1 Camera").show();
+      cp5.get(ScrollableList.class, "Star 2 Camera").show();
+      cp5.get(ScrollableList.class, "Star 3 Camera").show();
+      cp5.get(ScrollableList.class, "Star 4 Camera").show();
+      cp5.get(ScrollableList.class, "Star 5 Camera").show();
+      cp5.get(ScrollableList.class, "Star 6 Camera").show();
+      cp5.get(ScrollableList.class, "Star 7 Camera").show();
+    } else {
+      cp5.get(ScrollableList.class, "Star 0 Camera").hide();
+      cp5.get(ScrollableList.class, "Star 1 Camera").hide();
+      cp5.get(ScrollableList.class, "Star 2 Camera").hide();
+      cp5.get(ScrollableList.class, "Star 3 Camera").hide();
+      cp5.get(ScrollableList.class, "Star 4 Camera").hide();
+      cp5.get(ScrollableList.class, "Star 5 Camera").hide();
+      cp5.get(ScrollableList.class, "Star 6 Camera").hide();
+      cp5.get(ScrollableList.class, "Star 7 Camera").hide();
+
     }
     
     if (this.Mode == "PipeExit") {
@@ -298,6 +336,48 @@ class GUI {
   }
   
   
+  
+  //Type 14 GUI
+  void Type14GUI() {
+  
+    
+    //println(CPU.P4T);
+    
+    
+    //Camera Lists
+    int C0 = int(cp5.get(ScrollableList.class, "Star 0 Camera").getValue());
+    int C1 = int(cp5.get(ScrollableList.class, "Star 1 Camera").getValue());
+    int C2 = int(cp5.get(ScrollableList.class, "Star 2 Camera").getValue());
+    int C3 = int(cp5.get(ScrollableList.class, "Star 3 Camera").getValue());
+    int C4 = int(cp5.get(ScrollableList.class, "Star 4 Camera").getValue());
+    int C5 = int(cp5.get(ScrollableList.class, "Star 5 Camera").getValue());
+    int C6 = int(cp5.get(ScrollableList.class, "Star 6 Camera").getValue());
+    int C7 = int(cp5.get(ScrollableList.class, "Star 7 Camera").getValue());
+    
+    CPU.P1T = CPU.C2D(C1, C0);
+    CPU.P2T = CPU.C2D(C3, C2);
+    CPU.P3T = CPU.C2D(C5, C4);
+    CPU.P4T = CPU.C2D(C7, C6);
+    
+    fill(0);
+    textSize(20);
+    textAlign(CENTER);
+    text("Camera Mode:", 152, 63);
+    //text("ViewID:", 152, 208);
+    //text("AreaID:", 152, 293);
+    textSize(12);
+    textAlign(LEFT);
+    text("Tip: Type 14 controls the\ncamera when you get a star.", 310, 15);
+    textAlign(CENTER);
+    //text("How the character will act when entering level.", 152, 103);
+    //text("The ViewID of the camera (First on list is 0).", 152, 253);
+    textSize(10);
+    //text("The AreaID of where the character will spawn (Usually 0).", 152, 333);
+    textSize(12);
+  
+  }
+  
+  
   //PipeExit GUI
   void PipeExitGUI() {
     
@@ -316,7 +396,7 @@ class GUI {
     text("2. Add 0.05 to the Y and Z values.", 152, 245);
     text("3. Add the parameters from this tool.", 152, 265);
     text("ID of entrance to go to on death.", 175, 85+25);
-    text("(Usually an entrance that acts like a painting).", 153, 85+25+20);
+    text("(Usually an entrance that acts like a pit/pipe).", 153, 85+25+20);
     textSize(9);
     textAlign(RIGHT);
     if (NoDeathExitPipe.getState(0)){text("On", 17, 83);} else {text("Off", 17, 83);}

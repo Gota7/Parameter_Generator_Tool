@@ -204,6 +204,135 @@ void setup() {
                 .setValue(100)
                 .hide()
                 ;
+                
+                
+  String[] CModeList = {"0 - Zoom in when the player thrusts the star in the air.", "1 - Rotate to face FF07 view and zoom out.", "2 - Stand Still.", "3 - Spin around.", "4 - Stand Still. Used for castle and 100 coin stars.", "5 - Zooms in, then spins around crazily.", "6 - Freeze Game.", "7 - Freeze Game.", "8 - Freeze Game.", "9 - Player collects star, but wipe freezes game.", "10 - 0, but without zooming.", "11 - Freezes Game.", "12 - Cuts to FF07 camera???", "13 - Same as 10. (DUPLICATE?)", "14 - Same as 10. (DUPLICATE?)", "15 - Same as 10. (DUPLICATE?)"};
+                
+  //Camera Mode List
+  List C7 = Arrays.asList(CModeList);
+  cp5.addScrollableList("Star 7 Camera")
+     .setPosition(2, 70+25*7)
+     .setSize(300, 100)
+     .setBarHeight(20)
+     .setItemHeight(20)
+     .addItems(CModeList)
+     .setColorBackground(#07b73c)
+     .setType(ScrollableList.DROPDOWN)
+     .setOpen(false)                      //false for closed
+     .hide()
+     ;
+     
+  //Camera Mode List
+  List C6 = Arrays.asList(CModeList);
+  cp5.addScrollableList("Star 6 Camera")
+     .setPosition(2, 70+25*6)
+     .setSize(300, 100)
+     .setBarHeight(20)
+     .setItemHeight(20)
+     .addItems(CModeList)
+     .setColorBackground(#07b73c)
+     .setType(ScrollableList.DROPDOWN)
+     .setOpen(false)                      //false for closed
+     .hide()
+     ;
+     
+     
+     
+  //Camera Mode List
+  List C5 = Arrays.asList(CModeList);
+  cp5.addScrollableList("Star 5 Camera")
+     .setPosition(2, 70+25*5)
+     .setSize(300, 100)
+     .setBarHeight(20)
+     .setItemHeight(20)
+     .addItems(CModeList)
+     .setColorBackground(#07b73c)
+     .setType(ScrollableList.DROPDOWN)
+     .setOpen(false)                      //false for closed
+     .hide()
+     ;
+     
+     
+     
+     
+  //Camera Mode List
+  List C4 = Arrays.asList(CModeList);
+  cp5.addScrollableList("Star 4 Camera")
+     .setPosition(2, 70+25*4)
+     .setSize(300, 100)
+     .setBarHeight(20)
+     .setItemHeight(20)
+     .addItems(CModeList)
+     .setColorBackground(#07b73c)
+     .setType(ScrollableList.DROPDOWN)
+     .setOpen(false)                      //false for closed
+     .hide()
+     ;
+     
+     
+     
+  //Camera Mode List
+  List C3 = Arrays.asList(CModeList);
+  cp5.addScrollableList("Star 3 Camera")
+     .setPosition(2, 70+25*3)
+     .setSize(300, 100)
+     .setBarHeight(20)
+     .setItemHeight(20)
+     .addItems(CModeList)
+     .setColorBackground(#07b73c)
+     .setType(ScrollableList.DROPDOWN)
+     .setOpen(false)                      //false for closed
+     .hide()
+     ;
+     
+     
+     
+  //Camera Mode List
+  List C2 = Arrays.asList(CModeList);
+  cp5.addScrollableList("Star 2 Camera")
+     .setPosition(2, 70+25*2)
+     .setSize(300, 100)
+     .setBarHeight(20)
+     .setItemHeight(20)
+     .addItems(CModeList)
+     .setColorBackground(#07b73c)
+     .setType(ScrollableList.DROPDOWN)
+     .setOpen(false)                      //false for closed
+     .hide()
+     ;
+     
+     
+     
+  //Camera Mode List
+  List C1 = Arrays.asList(CModeList);
+  cp5.addScrollableList("Star 1 Camera")
+     .setPosition(2, 70+25*1)
+     .setSize(300, 100)
+     .setBarHeight(20)
+     .setItemHeight(20)
+     .addItems(CModeList)
+     .setColorBackground(#07b73c)
+     .setType(ScrollableList.DROPDOWN)
+     .setOpen(false)                      //false for closed
+     .hide()
+     ;
+     
+     
+     
+     
+  //Camera Mode List
+  List C0 = Arrays.asList(CModeList);
+  cp5.addScrollableList("Star 0 Camera")
+     .setPosition(2, 70+25*0)
+     .setSize(300, 100)
+     .setBarHeight(20)
+     .setItemHeight(20)
+     .addItems(CModeList)
+     .setColorBackground(#07b73c)
+     .setType(ScrollableList.DROPDOWN)
+     .setOpen(false)                      //false for closed
+     .hide()
+     ;
 
 }
 
